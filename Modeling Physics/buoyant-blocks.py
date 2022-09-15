@@ -4,6 +4,7 @@ Web VPython 3.2
 #Task 4: Sink or Float?
 
 #Name:Flora-lee Bornette, Sierra Dustin, William Wang
+scene = canvas(autoscale = False)
 #beaker
 fluid = box(pos = vec(0,-5,0), size = vec(10,10,10), opacity = .4, color = color.blue)
 #block
