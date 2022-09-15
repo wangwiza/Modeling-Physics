@@ -1,10 +1,9 @@
-GlowScript 3.1 VPython
+Web VPython 3.2
+
 
 #Task 4: Sink or Float?
 
 #Name:Flora-lee Bornette, Sierra Dustin, William Wang
-
-display(width=600, height=300, center=vector(0,0,0), background = color.white)
 #beaker
 fluid = box(pos = vec(0,-5,0), size = vec(10,10,10), opacity = .4, color = color.blue)
 #block
@@ -30,7 +29,7 @@ def R(r):
 checkbox(bind=R, text='Run') # text to right of button
 scene.append_to_caption('\n\n')
 
-def fluidselect(m):
+def fluidselect(m): #changing the fluid the blocks are submerged in
   if m.selected == "water":
     fluid.p = 1000
     fluid.color = color.blue
@@ -50,18 +49,18 @@ def fluidselect(m):
 fluidmenu = menu(choices=["Pick your poison", 'water', 'lava', 'milk', 'olive oil', 'magic water'], bind=fluidselect)
 scene.append_to_caption('\n\n')
 
-def den_s(sp):
+def den_s(sp): #density slider for lower block
     global sp
     wa.text = "lower block density = " + '{:1.2f}'.format(sp.value) #this is to define the format number
-Sp = slider(min = 1, max = 3000, value = 500, bind = den_s)
+Sp = slider(pos = scene.caption_anchor, min = 1, max = 3000, value = 500, bind = den_s)
 wa = wtext(text= "The density of the lower block is = " '{:1.2f}'.format(Sp.value))  #and to see your selected number on the side of the slider
-scene.append_to_caption(' m^3\n')  
+scene.append_to_caption(' m^3 \n')  
 scene.append_to_caption('\n\n')  #add line spacing
 
-def den_a(ap):
+def den_a(ap):#density slider for upper block
     global ap
     wb.text = "upper block density = " + '{:1.2f}'.format(ap.value)         #this is to define the format number
-Ap = slider(min = 1, max = 3000, value = 500, bind = den_a)
+Ap = slider(pos = scene.caption_anchor, min = 1, max = 3000, value = 500, bind = den_a)
 wb = wtext(text= "The density of the upper block is = " '{:1.2f}'.format(Ap.value))  #and to see your selected number on the side of the slider
 scene.append_to_caption(' m^3\n')  
 scene.append_to_caption('\n\n')  #add line spacing
@@ -78,7 +77,7 @@ steve.acc = vec(0,0,0)
 steve.vel = vec(0,.01,0)
 alex.acc = vec(0,0,0)
 alex.vel = vec(0,.01,0)
-steve.m = sp * steve.size.x * steve.size.y * steve.size.z
+steve.m = sp * steve.size.x * steve.size.y * steve.size.z #getting mass from volume and density
 alex.m = ap * alex.size.x * alex.size.y * alex.size.z
 dt = .000
 t = 0
@@ -86,20 +85,20 @@ t = 0
 #loop
 while ():
 
-    sp = Sp.value
+    sp = Sp.value #receiving density from sliders
     ap = Ap.value
-    steve.m = sp * steve.size.x * steve.size.y * steve.size.z
+    steve.m = sp * steve.size.x * steve.size.y * steve.size.z #updating the masses of the blocks respectively
     alex.m = ap * alex.size.x * alex.size.y * alex.size.z
 
     rate(5000)
-    fluid_top = fluid.pos.y + fluid.size.y/2
+    fluid_top = fluid.pos.y + fluid.size.y/2 #defining key y-levels such as the top of the fluid and the top and bottoms of the blocks
     fluid_bot = fluid.pos.y - fluid.size.y/2
     steve_top = steve.pos.y + steve.size.y/2
     steve_bot = steve.pos.y - steve.size.y/2
     alex_top = alex.pos.y + alex.size.y/2
     alex_bot = alex.pos.y - alex.size.y/2
 
-    if (steve_top <= fluid_top):
+    if (steve_top <= fluid_top): #check if submerged
         steve_sub = steve.size.y
     else if (steve_bot >= fluid_top):
         steve_sub = 0 
