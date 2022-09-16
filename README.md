@@ -1,4 +1,4 @@
-# Modeling-Physics
+<h1 align="center">Modeling Physics</h1>
 
 These are codes developed to simulate physical phenomena through 3D VPython animations.
 
