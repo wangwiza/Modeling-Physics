@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/wangwiza/modeling-physics">
-    <img src="logo.png" alt="Logo" width="120" height="80">
+    <img src="https://www.glowscript.org/docs/VPythonDocs/images/bounce.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Modeling Physics</h3>
