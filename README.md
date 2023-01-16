@@ -1,24 +1,12 @@
 
 <a name="readme-top"></a>
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -75,8 +63,13 @@
   <img src="./src/assets/buoyant-blocks-demo.gif" alt="buoyant blocks" width="600px" />
 </p>
 
+This project aims to simulate many concepts of physics in order to help students understand them better. There's snippets of code that animate the rolling motion and deceleration of a bowling ball on an alley, the buoyancy of a two block system, the oscillation of a spring-mass system, and much more...
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `wangwiza`, `modeling-physics`, `twitter_handle`, `willzawang`, `email_client`, `email`, `C++ & Arduino`, `Learning C++ basics through arduino circuits.`
+I used VPython, which is a module that allows quick 3D modelling in a canvas. It also comes in with built in widgets like sliders and buttons, which help vary physical constraints to see how it affects the system.
+
+The biggest challenge was buoyancy. I had trouble making the drag force look realistic (the bouncy bouncy effect), and I couldn't fix the top block when it was launched into the air by the bottom block accelerating upwards. 
+
+In the future, I hope to use what I've learnt about simulating physics in a video game. I think video games often rely on concepts in physics to dictate what happens in game (e.g. the motion of a boat, or ragdoll physics).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
